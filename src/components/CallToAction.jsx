@@ -18,7 +18,7 @@ export default function CallToAction() {
               'radial-gradient(circle at 25% 45%, #fff 0%, transparent 55%), radial-gradient(circle at 85% 15%, #fff 0%, transparent 45%)',
           }}
         />
-        <div className="absolute inset-0 bg-gradient-to-br from-black/10 via-transparent to-black/25" />
+        <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-red-900/15" />
       </div>
 
       <div className="relative z-10 max-w-3xl mx-auto px-5 md:px-8 text-center">

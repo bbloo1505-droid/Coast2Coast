@@ -23,8 +23,11 @@ export default {
         },
         input: 'hsl(var(--input))',
         c2c: {
-          dark: '#0a0d12',
-          steel: '#161d28',
+          cream: '#faf8f5',
+          sand: '#f3efe8',
+          fog: '#eef4f0',
+          paper: '#ffffff',
+          ink: '#1c1917',
         },
       },
       borderRadius: {

@@ -21,7 +21,7 @@ export default function ContactForm() {
   return (
     <section
       id="contact"
-      className="relative py-24 md:py-32 overflow-hidden bg-gradient-to-b from-muted/60 via-white to-white"
+      className="relative py-24 md:py-32 overflow-hidden bg-gradient-to-b from-white via-c2c-cream to-c2c-sand border-t border-stone-200/60"
       aria-labelledby="contact-heading"
     >
       <div

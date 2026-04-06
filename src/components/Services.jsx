@@ -34,7 +34,7 @@ export default function Services() {
   return (
     <section
       id="services"
-      className="relative py-24 md:py-32 bg-c2c-steel overflow-hidden"
+      className="relative py-24 md:py-32 bg-white overflow-hidden border-t border-stone-200/60"
       aria-labelledby="services-heading"
     >
       <div
@@ -51,11 +51,11 @@ export default function Services() {
           <p className="text-primary font-semibold text-sm tracking-widest uppercase mb-3">What We Do</p>
           <h2
             id="services-heading"
-            className="text-3xl sm:text-4xl md:text-5xl font-inter font-extrabold text-white tracking-tight leading-tight max-w-xl text-balance"
+            className="text-3xl sm:text-4xl md:text-5xl font-inter font-extrabold text-stone-900 tracking-tight leading-tight max-w-xl text-balance"
           >
             Workshop on wheels.
           </h2>
-          <p className="mt-4 text-zinc-300 text-base md:text-lg max-w-2xl leading-relaxed">
+          <p className="mt-4 text-stone-600 text-base md:text-lg max-w-2xl leading-relaxed">
             Same gear as a shop. You stay put. Hinterland to the coast.
           </p>
         </AnimatedSection>
@@ -63,7 +63,7 @@ export default function Services() {
         <div className="mt-16 grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           <AnimatedSection delay={0.08}>
             <motion.div
-              className="relative rounded-2xl overflow-hidden aspect-[4/3] shadow-2xl ring-1 ring-black/20"
+              className="relative rounded-2xl overflow-hidden aspect-[4/3] shadow-xl shadow-stone-300/50 ring-1 ring-stone-200/80"
               whileHover={reduceMotion ? {} : { scale: 1.015 }}
               transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
             >
@@ -76,7 +76,7 @@ export default function Services() {
                 decoding="async"
                 className="w-full h-full object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-c2c-dark/70 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-stone-900/50 via-transparent to-transparent" />
               <div className="absolute bottom-5 left-5 inline-flex items-center bg-primary text-white text-[10px] font-bold px-2.5 py-1.5 rounded-sm tracking-wide uppercase shadow-lg">
                 4WD &amp; Land Rover
               </div>
@@ -87,7 +87,7 @@ export default function Services() {
             {SERVICES.map((s, i) => (
               <AnimatedSection key={s.title} delay={0.12 + i * 0.08}>
                 <motion.div
-                  className="group flex gap-5 rounded-xl p-3 -m-3 hover:bg-white/[0.06] transition-colors duration-300"
+                  className="group flex gap-5 rounded-xl p-3 -m-3 hover:bg-stone-50 transition-colors duration-300"
                   whileHover={reduceMotion ? {} : { x: 4 }}
                   transition={{ duration: 0.25 }}
                 >
@@ -95,8 +95,8 @@ export default function Services() {
                     <s.icon className="h-5 w-5 text-primary group-hover:text-white transition-colors duration-300" aria-hidden />
                   </div>
                   <div>
-                    <h3 className="text-lg font-bold text-white tracking-tight">{s.title}</h3>
-                    <p className="mt-1.5 text-zinc-400 text-[15px] leading-relaxed">{s.desc}</p>
+                    <h3 className="text-lg font-bold text-stone-900 tracking-tight">{s.title}</h3>
+                    <p className="mt-1.5 text-stone-600 text-[15px] leading-relaxed">{s.desc}</p>
                   </div>
                 </motion.div>
               </AnimatedSection>

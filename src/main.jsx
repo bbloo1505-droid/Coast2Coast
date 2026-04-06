@@ -7,6 +7,6 @@ import './index.css';
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <App />
-    <Toaster position="top-center" richColors closeButton />
+    <Toaster theme="light" position="top-center" richColors closeButton />
   </StrictMode>
 );

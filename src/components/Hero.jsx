@@ -6,13 +6,16 @@ const HERO_IMG =
 
 const ease = [0.22, 1, 0.36, 1];
 
+/** Keeps headline/body readable on busy photos */
+const textShadow = 'drop-shadow-[0_2px_14px_rgba(0,0,0,0.85)]';
+
 export default function Hero() {
   const reduceMotion = useReducedMotion();
 
   return (
     <section
       id="top"
-      className="relative min-h-[100dvh] flex items-end pb-20 md:items-center md:pb-0 overflow-hidden"
+      className="relative flex min-h-[100dvh] items-end overflow-hidden pb-20 md:items-center md:pb-0"
       aria-labelledby="hero-heading"
     >
       <div className="absolute inset-0">
@@ -23,13 +26,14 @@ export default function Hero() {
           height={1080}
           fetchPriority="high"
           decoding="async"
-          className="w-full h-full object-cover"
+          className="h-full w-full object-cover"
           initial={reduceMotion ? false : { scale: 1.06 }}
           animate={{ scale: 1 }}
           transition={{ duration: reduceMotion ? 0 : 1.6, ease }}
         />
+        {/* Strong scrim: copy always sits on darkened area (original hero look, readable) */}
         <div
-          className="absolute inset-0 bg-gradient-to-t from-c2c-dark via-c2c-dark/70 to-c2c-dark/25 md:bg-gradient-to-r md:from-c2c-dark md:via-c2c-dark/80 md:to-transparent"
+          className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/45 to-black/15 md:bg-gradient-to-r md:from-black/80 md:via-black/45 md:to-black/10"
           aria-hidden
         />
         <div
@@ -38,7 +42,7 @@ export default function Hero() {
         />
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-5 md:px-8 w-full pt-28 md:pt-0">
+      <div className="relative z-10 mx-auto w-full max-w-7xl px-5 pt-28 md:px-8 md:pt-0">
         <div className="max-w-2xl">
           <motion.div
             initial={reduceMotion ? false : { opacity: 0, y: 12 }}
@@ -47,11 +51,11 @@ export default function Hero() {
             className="mb-7 flex max-w-sm"
           >
             <div className="w-[3px] shrink-0 bg-primary" aria-hidden />
-            <div className="min-w-0 flex-1 border border-white/10 border-l-0 bg-[#06080c]/90 px-4 py-3 sm:px-5 sm:py-3.5 rounded-r-sm">
-              <p className="text-[10px] sm:text-[11px] font-bold uppercase tracking-[0.16em] text-white">
+            <div className="min-w-0 flex-1 rounded-r-sm border border-white/15 border-l-0 bg-black/50 px-4 py-3 shadow-lg backdrop-blur-md sm:px-5 sm:py-3.5">
+              <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-white sm:text-[11px]">
                 Mobile mechanic
               </p>
-              <p className="mt-1 text-[11px] sm:text-xs text-white/60 leading-snug">
+              <p className="mt-1 text-[11px] leading-snug text-white/75 sm:text-xs">
                 Sunshine Coast QLD. Open 7 days.
               </p>
             </div>
@@ -62,7 +66,7 @@ export default function Hero() {
             initial={reduceMotion ? false : { opacity: 0, y: 28 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: reduceMotion ? 0 : 0.75, delay: reduceMotion ? 0 : 0.4, ease }}
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-inter font-extrabold text-white leading-[1.05] tracking-tight text-balance"
+            className={`text-balance text-4xl font-extrabold leading-[1.05] tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl ${textShadow}`}
           >
             Your mechanic,
             <br />
@@ -70,7 +74,7 @@ export default function Hero() {
               initial={reduceMotion ? false : { opacity: 0, x: -12 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: reduceMotion ? 0 : 0.7, delay: reduceMotion ? 0 : 0.55, ease }}
-              className="text-primary"
+              className={`text-primary ${textShadow}`}
             >
               at your door.
             </motion.span>
@@ -80,7 +84,7 @@ export default function Hero() {
             initial={reduceMotion ? false : { opacity: 0, y: 14 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: reduceMotion ? 0 : 0.5, delay: reduceMotion ? 0 : 0.72 }}
-            className="mt-5 md:mt-6 text-white/70 text-base sm:text-lg md:text-xl leading-relaxed max-w-lg"
+            className={`mt-5 max-w-lg text-base leading-relaxed text-white/90 sm:text-lg md:text-xl ${textShadow}`}
           >
             Logbook work, repairs, callouts. Hinterland to the coast. 4WDs, utes, daily drivers. Engine, gearbox and
             diff. Land Rover specialist.
@@ -90,13 +94,13 @@ export default function Hero() {
             initial={reduceMotion ? false : { opacity: 0, y: 14 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: reduceMotion ? 0 : 0.5, delay: reduceMotion ? 0 : 0.85 }}
-            className="mt-8 md:mt-10 flex flex-col sm:flex-row gap-3 sm:gap-4"
+            className="mt-8 flex flex-col gap-3 sm:flex-row sm:gap-4"
           >
             <motion.a
               href="tel:0435835688"
               whileHover={reduceMotion ? {} : { scale: 1.02, y: -2 }}
               whileTap={reduceMotion ? {} : { scale: 0.98 }}
-              className="focus-ring inline-flex items-center justify-center gap-2.5 bg-primary hover:bg-red-800 text-primary-foreground px-8 py-4 rounded-md text-base font-semibold transition-colors duration-300 shadow-cta shadow-primary/30"
+              className="focus-ring inline-flex items-center justify-center gap-2.5 rounded-md bg-primary px-8 py-4 text-base font-semibold text-white shadow-lg shadow-black/30 transition-colors hover:bg-red-700"
             >
               <Phone className="h-5 w-5 shrink-0" aria-hidden />
               <span className="tabular-nums tracking-tight">0435 835 688</span>
@@ -105,7 +109,7 @@ export default function Hero() {
               href="#contact"
               whileHover={reduceMotion ? {} : { scale: 1.01 }}
               whileTap={reduceMotion ? {} : { scale: 0.99 }}
-              className="focus-ring inline-flex items-center justify-center bg-white/10 hover:bg-white/18 border border-white/20 text-white px-8 py-4 rounded-md text-base font-semibold transition-colors duration-300"
+              className="focus-ring inline-flex items-center justify-center rounded-md border border-white/25 bg-white/10 px-8 py-4 text-base font-semibold text-white backdrop-blur-sm transition-colors hover:bg-white/20"
             >
               Get a quote
             </motion.a>
@@ -115,7 +119,7 @@ export default function Hero() {
             initial={reduceMotion ? false : { opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: reduceMotion ? 0 : 0.5, delay: reduceMotion ? 0 : 1 }}
-            className="mt-6 text-white/40 text-xs font-medium tracking-wide"
+            className={`mt-6 text-xs font-medium tracking-wide text-white/55 ${textShadow}`}
           >
             Sunshine Coast QLD
           </motion.p>
@@ -126,14 +130,14 @@ export default function Hero() {
         initial={reduceMotion ? false : { opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: reduceMotion ? 0 : 1.5, duration: reduceMotion ? 0 : 0.6 }}
-        className="absolute bottom-6 left-1/2 -translate-x-1/2 hidden md:block"
+        className="absolute bottom-6 left-1/2 z-10 hidden -translate-x-1/2 md:block"
       >
         <a
           href="#services"
-          className="focus-ring flex flex-col items-center gap-1 rounded-sm px-2 py-1.5 text-white/45 hover:text-white/75 transition-colors"
+          className="focus-ring flex flex-col items-center gap-1 rounded-full border border-white/20 bg-black/30 px-4 py-2.5 text-white/70 backdrop-blur-md transition hover:border-white/40 hover:text-white"
           aria-label="Scroll to services"
         >
-          <span className="text-[10px] uppercase tracking-[0.2em]">Services</span>
+          <span className="text-[10px] font-semibold uppercase tracking-[0.2em]">Services</span>
           {reduceMotion ? (
             <ArrowDown className="h-5 w-5" aria-hidden />
           ) : (
