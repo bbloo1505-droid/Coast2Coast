@@ -34,7 +34,7 @@ export default function Services() {
   return (
     <section
       id="services"
-      className="relative py-24 md:py-32 bg-white overflow-hidden border-t border-stone-200/60"
+      className="relative overflow-hidden border-t border-stone-200/60 bg-c2c-cream py-24 md:py-32"
       aria-labelledby="services-heading"
     >
       <div

@@ -21,15 +21,10 @@ export default function ContactForm() {
   return (
     <section
       id="contact"
-      className="relative py-24 md:py-32 overflow-hidden bg-gradient-to-b from-white via-c2c-cream to-c2c-sand border-t border-stone-200/60"
+      className="relative overflow-hidden border-t border-stone-200/60 bg-c2c-cream py-24 md:py-32"
       aria-labelledby="contact-heading"
     >
-      <div
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,hsl(var(--primary)/0.08),transparent)]"
-        aria-hidden
-      />
-
-      <div className="relative max-w-7xl mx-auto px-5 md:px-8">
+      <div className="relative mx-auto max-w-7xl px-5 md:px-8">
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-start">
           <AnimatedSection>
             <div>

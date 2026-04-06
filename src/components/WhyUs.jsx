@@ -32,17 +32,8 @@ export default function WhyUs() {
   const reduceMotion = useReducedMotion();
 
   return (
-    <section id="why-us" className="relative py-24 md:py-32 bg-c2c-sand overflow-hidden border-t border-stone-200/50">
-      <div
-        className="absolute inset-0 opacity-50"
-        style={{
-          backgroundImage:
-            'radial-gradient(circle at 20% 80%, hsl(var(--primary) / 0.05) 0%, transparent 52%), radial-gradient(circle at 82% 18%, hsl(35 32% 94%) 0%, transparent 48%)',
-        }}
-        aria-hidden
-      />
-
-      <div className="relative z-10 max-w-7xl mx-auto px-5 md:px-8">
+    <section id="why-us" className="relative overflow-hidden border-t border-stone-200/60 bg-c2c-cream py-24 md:py-32">
+      <div className="relative z-10 mx-auto max-w-7xl px-5 md:px-8">
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
           <AnimatedSection delay={0.08}>
             <motion.div

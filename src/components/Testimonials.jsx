@@ -78,23 +78,10 @@ export default function Testimonials() {
   return (
     <section
       id="reviews"
-      className="relative py-24 md:py-32 overflow-hidden border-t border-blue-100/80"
+      className="relative overflow-hidden border-t border-stone-200/60 bg-c2c-cream py-24 md:py-32"
       aria-labelledby="reviews-heading"
     >
-      <div
-        className="pointer-events-none absolute inset-0 bg-gradient-to-b from-sky-50 via-white to-amber-50/30"
-        aria-hidden
-      />
-      <div
-        className="pointer-events-none absolute -top-24 right-0 h-96 w-96 rounded-full bg-gradient-to-br from-blue-200/40 to-transparent blur-3xl"
-        aria-hidden
-      />
-      <div
-        className="pointer-events-none absolute -bottom-32 left-0 h-80 w-80 rounded-full bg-gradient-to-tr from-amber-200/35 to-transparent blur-3xl"
-        aria-hidden
-      />
-
-      <div className="relative max-w-7xl mx-auto px-5 md:px-8">
+      <div className="relative mx-auto max-w-7xl px-5 md:px-8">
         <AnimatedSection>
             <div className="mx-auto mb-14 md:mb-20 max-w-4xl">
             <div className="rounded-3xl border border-stone-200/90 bg-white/90 p-8 md:p-10 shadow-xl shadow-stone-300/40 backdrop-blur-sm md:p-12">
@@ -112,7 +99,7 @@ export default function Testimonials() {
                   </div>
                 </div>
 
-                <p className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-700">Google reviews</p>
+                <p className="text-sm font-semibold uppercase tracking-[0.2em] text-primary">Google reviews</p>
 
                 <p className="mt-2 text-5xl font-black tabular-nums tracking-tight text-stone-900 md:text-6xl">35+</p>
                 <p className="mt-1 text-lg font-semibold text-stone-700 md:text-xl">five-star reviews</p>
@@ -174,7 +161,7 @@ export default function Testimonials() {
                 <div className="mt-6 flex items-end justify-between gap-3 border-t border-stone-100 pt-5">
                   <div className="min-w-0">
                     <p className="truncate font-bold text-stone-900">{review.name}</p>
-                    <p className="mt-0.5 text-sm font-medium text-blue-700">{review.detail}</p>
+                    <p className="mt-0.5 text-sm font-medium text-stone-600">{review.detail}</p>
                   </div>
                 </div>
               </div>
