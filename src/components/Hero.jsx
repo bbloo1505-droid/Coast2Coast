@@ -1,8 +1,9 @@
 import { motion, useReducedMotion } from 'framer-motion';
 import { Phone, ArrowDown } from 'lucide-react';
 
+/** Hi-vis tradie look (reads local worksite, not US shop-uniform stock). Unsplash: r_KH1YccNgo */
 const HERO_IMG =
-  'https://media.base44.com/images/public/69d3668b1520c771bb71df6d/8b4a7808d_generated_691870c3.png';
+  'https://images.unsplash.com/photo-1729841989055-17d46c8b0c44?auto=format&fit=crop&w=1920&q=85';
 
 const ease = [0.22, 1, 0.36, 1];
 
@@ -21,7 +22,7 @@ export default function Hero() {
       <div className="absolute inset-0">
         <motion.img
           src={HERO_IMG}
-          alt="Sunshine Coast mobile mechanic working on a raised 4WD, tools and service van"
+          alt="Mechanic in high-visibility workwear using a power tool on a vehicle"
           width={1920}
           height={1080}
           fetchPriority="high"

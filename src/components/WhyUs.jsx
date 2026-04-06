@@ -32,12 +32,12 @@ export default function WhyUs() {
   const reduceMotion = useReducedMotion();
 
   return (
-    <section id="why-us" className="relative py-24 md:py-32 bg-c2c-fog overflow-hidden border-t border-stone-200/50">
+    <section id="why-us" className="relative py-24 md:py-32 bg-c2c-sand overflow-hidden border-t border-stone-200/50">
       <div
-        className="absolute inset-0 opacity-40"
+        className="absolute inset-0 opacity-50"
         style={{
           backgroundImage:
-            'radial-gradient(circle at 20% 80%, hsl(var(--primary) / 0.06) 0%, transparent 50%), radial-gradient(circle at 80% 20%, hsl(160 20% 90%) 0%, transparent 50%)',
+            'radial-gradient(circle at 20% 80%, hsl(var(--primary) / 0.05) 0%, transparent 52%), radial-gradient(circle at 82% 18%, hsl(35 32% 94%) 0%, transparent 48%)',
         }}
         aria-hidden
       />
