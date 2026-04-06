@@ -1,6 +1,10 @@
 import { useState, useEffect, useRef } from 'react';
 import { Phone, Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { cn } from '@/lib/utils';
+
+/** Readable on bright sky / dark hero when header is transparent */
+const onHeroNavShadow = 'drop-shadow-[0_1px_10px_rgba(0,0,0,0.88)]';
 
 const NAV_LINKS = [
   { label: 'Services', href: '#services' },
@@ -44,11 +48,12 @@ export default function Header() {
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
-        className={`fixed top-0 left-0 right-0 z-[70] transition-all duration-500 ${
+        className={cn(
+          'fixed top-0 left-0 right-0 z-[70] transition-all duration-500',
           scrolled
-            ? 'bg-white/95 backdrop-blur-xl shadow-md shadow-stone-200/50 border-b border-stone-200/80'
-            : 'bg-c2c-cream/90 backdrop-blur-md border-b border-stone-200/40'
-        }`}
+            ? 'border-b border-stone-200/80 bg-white/95 shadow-md shadow-stone-200/50 backdrop-blur-xl'
+            : 'border-b border-transparent bg-transparent'
+        )}
       >
         <div className="max-w-7xl mx-auto px-5 md:px-8">
           <div
@@ -63,13 +68,28 @@ export default function Header() {
                 alt=""
                 width={36}
                 height={36}
-                className="h-9 w-9 rounded-full ring-2 ring-stone-200 group-hover:ring-primary/30 transition-[box-shadow] duration-300"
+                className={cn(
+                  'h-9 w-9 rounded-full transition-[box-shadow] duration-300 ring-2',
+                  scrolled
+                    ? 'ring-stone-200 group-hover:ring-primary/30'
+                    : 'ring-white/45 group-hover:ring-white/70'
+                )}
               />
               <div className="hidden sm:block">
-                <span className="text-stone-900 font-inter font-bold text-sm tracking-tight leading-none block">
+                <span
+                  className={cn(
+                    'font-inter text-sm font-bold tracking-tight leading-none block',
+                    scrolled ? 'text-stone-900' : cn('text-white', onHeroNavShadow)
+                  )}
+                >
                   COAST 2 COAST
                 </span>
-                <span className="text-stone-500 font-inter text-[10px] tracking-[0.15em] uppercase leading-none">
+                <span
+                  className={cn(
+                    'font-inter text-[10px] tracking-[0.15em] uppercase leading-none',
+                    scrolled ? 'text-stone-500' : cn('text-white/85', onHeroNavShadow)
+                  )}
+                >
                   Mobile Mechanics
                 </span>
               </div>
@@ -80,7 +100,12 @@ export default function Header() {
                 <a
                   key={link.href}
                   href={link.href}
-                  className="focus-ring rounded-md text-stone-600 hover:text-stone-900 text-sm font-medium transition-colors duration-300"
+                  className={cn(
+                    'focus-ring rounded-md text-sm font-medium transition-colors duration-300',
+                    scrolled
+                      ? 'text-stone-600 hover:text-stone-900'
+                      : cn('text-white/90 hover:text-white', onHeroNavShadow)
+                  )}
                 >
                   {link.label}
                 </a>
@@ -101,7 +126,10 @@ export default function Header() {
               ref={menuButtonRef}
               type="button"
               onClick={() => setMobileOpen((o) => !o)}
-              className="focus-ring lg:hidden text-stone-800 p-2 rounded-lg -m-1"
+              className={cn(
+                'focus-ring lg:hidden p-2 rounded-lg -m-1',
+                scrolled ? 'text-stone-800' : cn('text-white', onHeroNavShadow)
+              )}
               aria-expanded={mobileOpen}
               aria-controls="mobile-nav"
               aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
